@@ -7,6 +7,7 @@ pub fn configure(cfg: &mut web::ServiceConfig) {
         web::scope("/assets")
             .service(htmx)
             .service(tailwind)
+            .service(profile)
     );
 }
 #[get("/htmx.min.js")]  // Changed from "htmx.min.js" to "/assets/htmx.min.js"
@@ -17,4 +18,9 @@ async fn htmx() -> actix_web::Result<NamedFile> {
 #[get("/tailwind.min.js")]  // Changed from "tailwind.min.js" to "/assets/tailwind.min.js"
 async fn tailwind() -> actix_web::Result<NamedFile> {
     Ok(NamedFile::open("src/template/assets/tailwind.min.js")?)
+}
+
+#[get("/profile.jpeg")]  // Changed from "tailwind.min.js" to "/assets/tailwind.min.js"
+async fn profile() -> actix_web::Result<NamedFile> {
+    Ok(NamedFile::open("src/template/assets/images/PeterKnausProfile.jpeg")?)
 }
