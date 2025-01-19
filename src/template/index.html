@@ -62,11 +62,7 @@
                     <div class="h-4 bg-gray-200 rounded w-1/2 mb-2"></div>
                     <div class="h-4 bg-gray-200 rounded w-3/4"></div>
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <div class="h-4 bg-gray-200 rounded w-1/4 mb-4"></div>
-                    <div class="h-4 bg-gray-200 rounded w-1/2 mb-2"></div>
-                    <div class="h-4 bg-gray-200 rounded w-3/4"></div>
-                </div>
+
             </div>
         </div>
     </div>
@@ -86,26 +82,6 @@
              hx-swap="innerHTML">
 
             <!-- Loading States -->
-            <div class="bg-gray-50 p-6 rounded-lg shadow-md">
-                <div class="animate-pulse space-y-4">
-                    <div class="h-6 bg-gray-200 rounded w-1/2"></div>
-                    <div class="space-y-2">
-                        <div class="h-4 bg-gray-200 rounded w-3/4"></div>
-                        <div class="h-4 bg-gray-200 rounded w-2/3"></div>
-                        <div class="h-4 bg-gray-200 rounded w-3/4"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="bg-gray-50 p-6 rounded-lg shadow-md">
-                <div class="animate-pulse space-y-4">
-                    <div class="h-6 bg-gray-200 rounded w-1/2"></div>
-                    <div class="space-y-2">
-                        <div class="h-4 bg-gray-200 rounded w-3/4"></div>
-                        <div class="h-4 bg-gray-200 rounded w-2/3"></div>
-                        <div class="h-4 bg-gray-200 rounded w-3/4"></div>
-                    </div>
-                </div>
-            </div>
             <div class="bg-gray-50 p-6 rounded-lg shadow-md">
                 <div class="animate-pulse space-y-4">
                     <div class="h-6 bg-gray-200 rounded w-1/2"></div>
@@ -156,6 +132,48 @@
             `).join('');
 
             container.innerHTML = skillsHtml;
+        }
+
+        if (evt.detail.pathInfo.requestPath === '/api/experiences') {
+            const experiences = JSON.parse(evt.detail.xhr.response);
+            const container = evt.detail.target;
+
+            const experiencesHtml = experiences.map(experience => `
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow mb-6">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-1">
+                                ${experience.title}
+                            </h3>
+                            <div class="text-lg text-indigo-600 font-medium">
+                                ${experience.company}
+                            </div>
+                        </div>
+                        <div class="flex flex-col items-end text-sm text-gray-500">
+                            <span class="font-medium">${experience.period}</span>
+                            <span class="mt-1">${experience.location}</span>
+                        </div>
+                    </div>
+
+                    <div class="prose prose-sm text-gray-600">
+                        ${experience.description ? `
+                            <p class="mt-2">${experience.description}</p>
+                        ` : ''}
+                    </div>
+
+                    <div class="mt-4 flex items-center text-sm text-gray-500">
+                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                  d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                        ${experience.location}
+                    </div>
+                </div>
+            `).join('');
+
+            container.innerHTML = experiencesHtml;
         }
     });
 </script>
