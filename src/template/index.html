@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <title>Peter Knaus | Knaus.io</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./assets/tailwind.min.js"></script>
+    <script src="./assets/htmx.min.js"></script>
+</head>
+</head>
+<body class="dark:bg-slate-800">
+<!-- Navigation -->
+<nav class="fixed top-0 w-full shadow-sm z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16">
+            <div class="flex items-center">
+                <span class="text-2xl font-bold text-gray-900">Peter Knaus</span>
+            </div>
+            <div class="flex items-center space-x-4">
+                <a href="#home" class="text-gray-700 hover:text-gray-900">Home</a>
+                <a href="#experience" class="text-gray-700 hover:text-gray-900">Experience</a>
+                <a href="#skills" class="text-gray-700 hover:text-gray-900">Skills</a>
+                <a href="#contact" class="text-gray-700 hover:text-gray-900">Contact</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<section id="home" class="pt-20 pb-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16">
+        <div class="text-center">
+            <h1 class="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
+                <span class="block">Hi, I'm </span>
+                <span class="block text-indigo-600">Peter Knaus</span>
+            </h1>
+            <p class="mt-3 max-w-md mx-auto text-base text-gray-500 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
+                DevOps | Infrastructure Architect | Data Analyst with 7+ years of web development experience
+            </p>
+            <div class="mt-4 flex justify-center space-x-4">
+                <a href="mailto:peter@knaus.io" class="text-gray-600 hover:text-gray-900">peter@knaus.io</a>
+                <span class="text-gray-400">|</span>
+                <a href="tel:+447777338848" class="text-gray-600 hover:text-gray-900">+44 7777 33 88 48</a>
+                <span class="text-gray-400">|</span>
+                <a href="https://linkedin.com/in/peter-knaus3" target="_blank" class="text-gray-600 hover:text-gray-900">LinkedIn</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Experience Section -->
+<section id="experience" class="py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-extrabold text-gray-900 text-center mb-8">Experience</h2>
+        <div class="space-y-8"
+             hx-get="/api/experiences"
+             hx-trigger="load"
+             hx-swap="innerHTML">
+            <div class="animate-pulse space-y-8">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="h-4 bg-gray-200 rounded w-1/4 mb-4"></div>
+                    <div class="h-4 bg-gray-200 rounded w-1/2 mb-2"></div>
+                    <div class="h-4 bg-gray-200 rounded w-3/4"></div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="h-4 bg-gray-200 rounded w-1/4 mb-4"></div>
+                    <div class="h-4 bg-gray-200 rounded w-1/2 mb-2"></div>
+                    <div class="h-4 bg-gray-200 rounded w-3/4"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Skills Section -->
+<!-- Skills Section -->
+<section id="skills" class="py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-extrabold text-gray-900 text-center mb-8">Skills</h2>
+
+        <!-- Skills Grid -->
+        <div id="skills-grid"
+             class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+             hx-get="/api/skills"
+             hx-trigger="load"
+             hx-swap="innerHTML">
+
+            <!-- Loading States -->
+            <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                <div class="animate-pulse space-y-4">
+                    <div class="h-6 bg-gray-200 rounded w-1/2"></div>
+                    <div class="space-y-2">
+                        <div class="h-4 bg-gray-200 rounded w-3/4"></div>
+                        <div class="h-4 bg-gray-200 rounded w-2/3"></div>
+                        <div class="h-4 bg-gray-200 rounded w-3/4"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                <div class="animate-pulse space-y-4">
+                    <div class="h-6 bg-gray-200 rounded w-1/2"></div>
+                    <div class="space-y-2">
+                        <div class="h-4 bg-gray-200 rounded w-3/4"></div>
+                        <div class="h-4 bg-gray-200 rounded w-2/3"></div>
+                        <div class="h-4 bg-gray-200 rounded w-3/4"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                <div class="animate-pulse space-y-4">
+                    <div class="h-6 bg-gray-200 rounded w-1/2"></div>
+                    <div class="space-y-2">
+                        <div class="h-4 bg-gray-200 rounded w-3/4"></div>
+                        <div class="h-4 bg-gray-200 rounded w-2/3"></div>
+                        <div class="h-4 bg-gray-200 rounded w-3/4"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                <div class="animate-pulse space-y-4">
+                    <div class="h-6 bg-gray-200 rounded w-1/2"></div>
+                    <div class="space-y-2">
+                        <div class="h-4 bg-gray-200 rounded w-3/4"></div>
+                        <div class="h-4 bg-gray-200 rounded w-2/3"></div>
+                        <div class="h-4 bg-gray-200 rounded w-3/4"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    htmx.on('htmx:afterRequest', function(evt) {
+        if (evt.detail.pathInfo.requestPath === '/api/skills') {
+            const skills = JSON.parse(evt.detail.xhr.response);
+
+            const container = evt.detail.target;
+
+            const skillsHtml = skills.map(category => `
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">${category.category}</h3>
+                    <ul class="space-y-2">
+                        ${category.items.map(item => `
+                            <li class="text-gray-700">
+                                <span class="inline-flex items-center">
+                                    <svg class="w-4 h-4 mr-2 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                    </svg>
+                                    ${item}
+                                </span>
+                            </li>
+                        `).join('')}
+                    </ul>
+                </div>
+            `).join('');
+
+            container.innerHTML = skillsHtml;
+        }
+    });
+</script>
+
+<!-- Contact Section -->
+<section id="contact" class="py-12 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-extrabold text-gray-900 text-center mb-8">Contact Me</h2>
+        <div class="max-w-lg mx-auto">
+            <form hx-post="/api/contact"
+                  hx-swap="outerHTML"
+                  hx-indicator="#submit-indicator"
+                  class="space-y-6 p-6 rounded-lg shadow-md">
+                <div>
+                    <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
+                    <input type="text" name="name" id="name" required
+                           class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500">
+                </div>
+                <div>
+                    <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                    <input type="email" name="email" id="email" required
+                           class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500">
+                </div>
+                <div>
+                    <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
+                    <textarea name="message" id="message" rows="4" required
+                              class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"></textarea>
+                </div>
+                <div class="flex items-center justify-between">
+                    <button type="submit"
+                            class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                        Send Message
+                    </button>
+                    <div id="submit-indicator" class="htmx-indicator">
+                        <svg class="animate-spin h-5 w-5 text-indigo-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        </svg>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+</body>
+</html>

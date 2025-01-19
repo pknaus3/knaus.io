@@ -1,0 +1,148 @@
+[
+  {
+    "category": "Programming Languages",
+    "items": [
+      "PHP",
+      "JavaScript",
+      "GOLang",
+      "Python",
+      "Rust"
+    ]
+  },
+  {
+    "category": "Frontend Technologies",
+    "items": [
+      "Vue.js",
+      "Svelte"
+    ]
+  },
+  {
+    "category": "Backend & Frameworks",
+    "items": [
+      "Laravel",
+      "OctoberCMS",
+      "WinterCMS",
+      "WordPress",
+      "API Development"
+    ]
+  },
+  {
+    "category": "Databases & Data",
+    "items": [
+      "PostgreSQL",
+      "MySQL",
+      "MariaDB",
+      "Multi-tenant databases",
+      "Compliant dataset processing"
+    ]
+  },
+  {
+    "category": "DevOps & Infrastructure",
+    "items": [
+      "Docker",
+      "Container environments (VM)",
+      "CI/CD Pipelining",
+      "Azure",
+      "Google Cloud Services",
+      "Cloudflare Enterprise",
+      "Github / Github Enterprise",
+      "Git"
+    ]
+  },
+  {
+    "category": "System Administration",
+    "items": [
+      "Linux (All flavours)",
+      "SSH Key turning, FIDO2, OTP, PIV",
+      "FTP, SMTP server configurations",
+      "Nginx",
+      "PHP_FPM",
+      "Apache",
+      "OpenVPN",
+      "WireGuard",
+      "Tailscale"
+    ]
+  },
+  {
+    "category": "Networking",
+    "items": [
+      "Cisco",
+      "Ubiquiti",
+      "PFSense",
+      "Network infrastructure",
+      "Network visualisations"
+    ]
+  },
+  {
+    "category": "Security & Monitoring",
+    "items": [
+      "SIEM Strategy",
+      "New Relic",
+      "OSINT Frameworks"
+    ]
+  },
+  {
+    "category": "Testing & Quality Assurance",
+    "items": [
+      "Unit Testing",
+      "Integration Testing",
+      "API Testing (Insomnia, Postman)",
+      "Performance Testing"
+    ]
+  },
+  {
+    "category": "Project Management & Collaboration",
+    "items": [
+      "Technical Leadership",
+      "Team Mentoring",
+      "Architecture Design",
+      "Technical Documentation",
+      "Agile Methodologies"
+    ]
+  },
+  {
+    "category": "Methodologies & Best Practices",
+    "items": [
+      "Enterprise Architecture",
+      "Microservices Architecture",
+      "RESTful API Design",
+      "Security Best Practices",
+      "Performance Optimization"
+    ]
+  },
+  {
+    "category": "Data Analysis & Monitoring",
+    "items": [
+      "Data Analytics",
+      "System Monitoring",
+      "Performance Metrics",
+      "Log Analysis",
+      "Business Intelligence"
+    ]
+  },
+  {
+    "category": "Development Tools",
+    "items": [
+      "JetBrains IDEs",
+      "IdeaVim",
+      "Insomnia",
+      "Postman",
+      "Obsidian.md",
+      "ZSH with oh-my-zsh",
+      "TMUX",
+      "NeoVim",
+      "fzf"
+    ]
+  },
+  {
+    "category": "Package Management",
+    "items": [
+      "composer",
+      "npm",
+      "apt",
+      "homebrew",
+      "pip",
+      "dnf"
+    ]
+  }
+]
