@@ -1,8 +1,9 @@
 use actix_web::web;
-use crate::domain::skill::controllers::skills::get_skills;
+use crate::domain::experience::controllers::experiences::get_experiences;
 pub fn configure(cfg: &mut web::ServiceConfig) {
     cfg.service(
-        web::scope("/skill/api")
-            .service(get_skills)
+        web::scope("/experience/api")
+            .service(get_experiences)
     );
 }
+

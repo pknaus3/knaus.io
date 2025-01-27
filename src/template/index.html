@@ -133,7 +133,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 class="text-3xl font-extrabold text-text-primary text-center mb-8">Experience</h2>
         <div class="space-y-8"
-             hx-get="/api/experiences"
+             hx-get="/experience/api/experiences"
              hx-trigger="load"
              hx-swap="innerHTML">
             <div class="animate-pulse space-y-8">
@@ -214,7 +214,7 @@
             container.innerHTML = skillsHtml;
         }
 
-        if (evt.detail.pathInfo.requestPath === '/api/experiences') {
+        if (evt.detail.pathInfo.requestPath === '/experience/api/experiences') {
             const experiences = JSON.parse(evt.detail.xhr.response);
             const container = evt.detail.target;
 

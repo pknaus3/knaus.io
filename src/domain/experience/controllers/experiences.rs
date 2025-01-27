@@ -1,4 +1,4 @@
-use crate::domain::experience::model::{load_experience, Experience};
+use crate::domain::experience::models::experience::{load_experience, Experience};
 use actix_web::{get, HttpResponse};
 
 #[get("/experiences")]
