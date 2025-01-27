@@ -1,5 +1,5 @@
 use actix_web::{get, HttpResponse};
-use crate::domain::skill::model::{Skill, load_skills};
+use crate::domain::skill::models::skill::{Skill, load_skills};
 
 #[get("/skills")]
 pub async fn get_skills() -> actix_web::Result<HttpResponse> {

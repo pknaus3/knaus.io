@@ -157,7 +157,7 @@
         <!-- Skills Grid -->
         <div id="skills-grid"
              class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-             hx-get="/api/skills"
+             hx-get="skill/api/skills"
              hx-trigger="load"
              hx-swap="innerHTML">
 
@@ -188,7 +188,7 @@
 
 <script>
     htmx.on('htmx:afterRequest', function (evt) {
-        if (evt.detail.pathInfo.requestPath === '/api/skills') {
+        if (evt.detail.pathInfo.requestPath === 'skill/api/skills') {
             const skills = JSON.parse(evt.detail.xhr.response);
 
             const container = evt.detail.target;

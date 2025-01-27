@@ -12,5 +12,5 @@ pub fn load_skills() -> Vec<Skill> {
 
     let data: Vec<Skill> = serde_json::from_str(&skills).expect("Convert error");
 
-    return data;
+    data
 }
