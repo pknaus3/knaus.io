@@ -4,11 +4,15 @@
 [print_schema]
 file = "src/schema.rs"
 custom_type_derives = ["diesel::query_builder::QueryId", "Clone"]
-filter = {except_tables=["posts"]}
+filter = {except_tables=["posts", "contacts"]}
 
 [print_schema.blog]
 file="src/domain/blog/schema.rs"
 filter = {only_tables=["posts"]}
+
+[print_schema.contact]
+file="src/domain/contact/schema.rs"
+filter = {only_tables=["contacts"]}
 
 [migrations_directory]
 dir = "/home/pknaus3/Projects/knaus.io/migrations"

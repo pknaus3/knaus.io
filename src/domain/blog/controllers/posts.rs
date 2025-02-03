@@ -10,6 +10,5 @@ pub async fn get_posts(pool: web::Data<DbPool>) -> actix_web::Result<HttpRespons
         post_service::get_posts(&mut conn)
     }).await?;
 
-
     Ok(HttpResponse::Ok().json(result))
 }

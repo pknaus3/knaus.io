@@ -9,6 +9,7 @@ type DbPool = r2d2::Pool<ConnectionManager<PgConnection>>;
 use domain::skill::routes::api::configure as skill_config;
 use domain::experience::routes::api::configure as experience_config;
 use domain::blog::routes::api::config as blog_config;
+use domain::contact::routes::api::configure as contact_config;
 use dotenvy::dotenv;
 use std::env;
 use diesel::PgConnection;
@@ -28,9 +29,10 @@ async fn main() -> std::io::Result<()> {
         App::new()
             .app_data(web::Data::new(pool.clone()))
             .configure(routes::assets::configure)
+            .configure(experience_config)
             .configure(skill_config)
             .configure(blog_config)
-            .configure(experience_config)
+            .configure(contact_config)
             .configure(routes::web::configure)
         }
     )
