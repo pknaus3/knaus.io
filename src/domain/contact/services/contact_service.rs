@@ -1,5 +1,4 @@
 use actix_web::web::Json;
-use crate::domain::contact::schema::contacts::dsl::contacts;
 use crate::domain::contact::models::contact::{Contact, NewContact};
 use diesel::prelude::*;
 

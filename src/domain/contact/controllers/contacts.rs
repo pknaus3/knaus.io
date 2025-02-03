@@ -1,6 +1,6 @@
 use actix_web::{post, web, HttpResponse};
 use crate::DbPool;
-use crate::domain::contact::models::contact::{Contact, NewContact};
+use crate::domain::contact::models::contact::NewContact;
 use crate::domain::contact::services::contact_service;
 
 #[post("/contact")]
