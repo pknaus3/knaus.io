@@ -12,12 +12,16 @@ use domain::blog::routes::api::config as blog_config;
 use domain::contact::routes::api::configure as contact_config;
 use dotenvy::dotenv;
 use std::env;
+use actix_web::middleware::Logger;
 use diesel::PgConnection;
 use diesel::r2d2::{self, ConnectionManager};
+use env_logger::Env;
 
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
     dotenv().ok();
+
+    env_logger::init_from_env(Env::default().default_filter_or("info"));
 
     let database_url = env::var("DATABASE_URL").expect("DATABASE_URL must be set");
     let manager = ConnectionManager::<PgConnection>::new(database_url);
@@ -27,6 +31,8 @@ async fn main() -> std::io::Result<()> {
 
     HttpServer::new(move || {
         App::new()
+            .wrap(Logger::default())
+            // .wrap(Logger::new("%D %r"))
             .app_data(web::Data::new(pool.clone()))
             .configure(routes::assets::configure)
             .configure(experience_config)
