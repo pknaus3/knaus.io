@@ -1,4 +1,4 @@
-use actix_web::{web, App, HttpServer};
+use actix_web::{web, App, HttpServer, cookie::Key};
 
 mod routes;
 mod domain;
@@ -12,6 +12,8 @@ use domain::blog::routes::api::config as blog_config;
 use domain::contact::routes::api::configure as contact_config;
 use dotenvy::dotenv;
 use std::env;
+use actix_session::{SessionMiddleware};
+use actix_session::storage::CookieSessionStore;
 use actix_web::middleware::Logger;
 use diesel::PgConnection;
 use diesel::r2d2::{self, ConnectionManager};
@@ -32,6 +34,12 @@ async fn main() -> std::io::Result<()> {
     HttpServer::new(move || {
         App::new()
             .wrap(Logger::default())
+            .wrap(
+                // create cookie based session middleware
+                SessionMiddleware::builder(CookieSessionStore::default(), Key::from(&[0; 64]))
+                    .cookie_secure(false)
+                    .build()
+            )
             // .wrap(Logger::new("%D %r"))
             .app_data(web::Data::new(pool.clone()))
             .configure(routes::assets::configure)

@@ -8,8 +8,11 @@ actix-web = { version = "4.9.0" }
 actix-files = "0.6.6"
 serde_json = "1.0.135"
 serde = { version = "1.0.217", features = ["derive",] }
-diesel = { version = "2.2.0", features = ["postgres", "r2d2", "chrono"] }
+diesel = { version = "2.2.0", features = ["postgres", "r2d2", "chrono", "numeric"] }
 dotenvy = "0.15"
 r2d2 = "0.8.10"
 chrono = { version = "0.4.39", features = ["serde"] }
 env_logger = "0.11.6"
+bigdecimal = { version = "0.3", features = ["serde"] }
+actix-session = { version = "0.10.1", features = ["cookie-session"] }
+cookie = "0.18.1"
